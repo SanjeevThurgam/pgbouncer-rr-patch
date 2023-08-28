@@ -33,6 +33,17 @@ MERGEFILES="\
    Makefile\
    src/client.c\
    src/main.c\
+   src/janitor.c\
+   src/loader.c\
+   src/objects.c\
+   src/pktbuf.c\
+   src/server.c\
+   src/admin.c\
+   include/janitor.h\
+   include/loader.h\
+   include/objects.h\
+   include/pktbuf.h\
+   doc/config.md\
    include/bouncer.h\
    "
 for file in $MERGEFILES
