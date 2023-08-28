@@ -1,7 +1,3 @@
-#FROM ubuntu:14.04
-#RUN  apt-get update \
-#  && apt-get install -y wget \
-#  && rm -rf /var/lib/apt/lists/*
 FROM public.ecr.aws/amazonlinux/amazonlinux:2022
 
 RUN yum -y update
@@ -17,7 +13,7 @@ RUN git clone https://github.com/pgbouncer/pgbouncer.git --branch "stable-1.19" 
     git submodule init && \
     git submodule update && \
     ./autogen.sh && \
-    #ln -s /usr/bin/x86_64-amazon-linux-gnu-pkg-config /usr/bin/x86_64-redhat-linux-gnu-pkg-config && \
+    ln -s /usr/bin/x86_64-amazon-linux-gnu-pkg-config /usr/bin/x86_64-redhat-linux-gnu-pkg-config && \
     ./configure --prefix=/usr/local --exec-prefix=/usr/bin && \
     make && \
     make install
